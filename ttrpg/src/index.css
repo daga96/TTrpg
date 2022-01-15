@@ -1,0 +1,24 @@
+:root{
+  --background-dark: #191919;
+  --accent-pink: #D497C3;
+  --accent-blue: #55b9ca; 
+  --accent-purple: #A388C6;
+  --font-main: #FFFFFF;
+  
+
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
