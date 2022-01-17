@@ -1,5 +1,4 @@
 import "./Signin.css"
-import {Link} from 'react-router-dom'
 
 export default function Signup() {
 
@@ -28,7 +27,6 @@ export default function Signup() {
 
             </div>
         </div>
-
     
     )
 
