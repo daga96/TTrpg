@@ -10,11 +10,11 @@ export default function Signup() {
                     <h3> Create an Account </h3>
                     <p>Welcome to TTrpg!</p>
                     <form> 
-                        <label for="email">Email</label>
+                        <label htmlFor="email">Email</label>
                         <input type='email' placeholder="email"/>
-                        <label for='username'>Username</label>
+                        <label htmlFor='username'>Username</label>
                         <input type='text' placeholder="username" name='username' required/>
-                        <label for='password'>Password</label>
+                        <label htmlFor='password'>Password</label>
                         <input type='password'placeholder='password' name='password' required/>
 
                         <button className="signin-button" type="submit">Sign In</button>
