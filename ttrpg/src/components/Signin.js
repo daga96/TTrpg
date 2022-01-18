@@ -10,8 +10,8 @@ export default function Signin() {
                     <h3> Sign In</h3>
                     <p>Welcome back adventurer!</p>
                     <form> 
-                        <label htmlFor='username'>Username</label>
-                        <input type='text' placeholder="username" name='username' required/>
+                        <label htmlFor='email'>Email</label>
+                        <input type='text' placeholder="email" name='email' required/>
                         <label htmlFor='password'>Password</label>
                         <input type='password'placeholder='password' name='password' required/>
 

@@ -1,11 +1,11 @@
 import "./Main.css"
 import Tooltip from '@mui/material/Tooltip';
 
-const Main = () => (
+export default function Main (){
     
+    return (
     <div className="main" id="main">
-        
-      
+              
         <div className="main-component">
         
             <div className="content-left">
@@ -28,4 +28,4 @@ const Main = () => (
 
       
 
-  export default Main;
+}
