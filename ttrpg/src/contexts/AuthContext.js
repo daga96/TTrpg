@@ -1,56 +1,51 @@
-import React, {useContext, useState, useEffect} from 'react'
-import {Auth} from '../firebaseConfig'
+import React, { useContext, useState, useEffect } from "react";
+import { Auth } from "../firebaseConfig";
 
-const AuthContext = React.createContext()
+const AuthContext = React.createContext();
 
 export function useAuth() {
-
-  return useContext(AuthContext)
+  return useContext(AuthContext);
 }
 
-export function AuthProvider({children}) { 
+export function AuthProvider({ children }) {
+  const [currentUser, setCurrentUser] = useState();
+  const [loading, setLoading] = useState(true);
 
-    const [currentUser, setCurrentUser]=useState()
-    const [loading, setLoading]=useState(true)
+  function signup(email, password) {
+    return Auth.createUserWithEmailAndPassword(email, password);
+  }
 
-  
-    function signup(email,password) {
+  function signin(email, password) {
+    return Auth.signInWithEmailAndPassword(email, password);
+  }
 
-        return Auth.createUserWithEmailAndPassword(email,password)
-    }
+  function signout() {
+    console.log("User logged out");
+    return Auth.signOut();
+  }
 
-    function signin(email,password) {
-        return Auth.signInWithEmailAndPassword(email, password)
-    }
-    
-    function signout() {
+  useEffect(() => {
+    const unsubscribe = Auth.onAuthStateChanged((user) => {
+      setCurrentUser(user ? user : null);
+      console.log(currentUser);
+      setLoading(false);
+    });
 
-        return Auth.signOut()
-    }
+    return unsubscribe;
+  }, []);
 
-    useEffect(()=> { 
-        const unsubscribe= Auth.onAuthStateChanged(user => {
-            setCurrentUser(user)
-            setLoading(false)
-        })
+  const value = {
+    currentUser,
+    signin,
+    signup,
+    signout,
+  };
 
-        return unsubscribe 
-    }, [])
-
-    const value = {
-        currentUser,
-        signin,
-        signup,
-        signout
-    }
-    
-
-
-    return ( 
-        <div>
-            <AuthContext.Provider value={value}>
-                {!loading && children}
-            </AuthContext.Provider>
-        </div>
-    )
+  return (
+    <div>
+      <AuthContext.Provider value={value}>
+        {!loading && children}
+      </AuthContext.Provider>
+    </div>
+  );
 }
