@@ -14,4 +14,4 @@ The project is currently written in:
 <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB">
 </div>
 
-Firebase hosting link TBD
+Firebase hosting link: https://ttrpg-859de.firebaseapp.com/
